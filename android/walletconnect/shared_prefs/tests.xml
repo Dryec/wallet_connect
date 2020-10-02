@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="org.walletconnect.session">{&quot;session&quot;:{&quot;topic&quot;:&quot;topic_1&quot;,&quot;version&quot;:&quot;1&quot;,&quot;bridge&quot;:&quot;https://bridge.walletconnect.org&quot;,&quot;key&quot;:&quot;some_key&quot;},&quot;peerId&quot;:&quot;peerId&quot;,&quot;remotePeerId&quot;:&quot;remotePeerId&quot;,&quot;remotePeerMeta&quot;:{&quot;name&quot;:&quot;Some DApp&quot;,&quot;url&quot;:&quot;https://dapp.com&quot;,&quot;description&quot;:null,&quot;icons&quot;:[&quot;&quot;]},&quot;isAutoSign&quot;:false,&quot;date&quot;:&quot;Sep 6, 2020 11:22:19 AM&quot;}</string>
+</map>

@@ -19,3 +19,6 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+android/walletconnect/.idea/
+android/.idea/
+example/android/walletconnect/src/main/gen/
