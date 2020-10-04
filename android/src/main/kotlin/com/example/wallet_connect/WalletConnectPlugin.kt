@@ -66,13 +66,25 @@ class WalletConnectPlugin : FlutterPlugin, MethodCallHandler {
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
       when (call.method) {
           "connectToSessionString" -> {
-            val session = call.argument<String>("session")?.let { WCSession.from(it) }
+              val session = call.argument<String>("session")?.let { WCSession.from(it) }
 
-            if (session == null) {
-              result.error("missing_session", "No session provided", "null")
-              return
-            }
-            client.connect(session, peerMeta)
+              if (session == null) {
+                  result.error("missing_session", "No session provided", "null")
+                  return
+              }
+              client.disconnect()
+              client.connect(session, peerMeta)
+          }
+          "isConnected" -> {
+              result.success(client.isConnected)
+              client.peerMeta
+          }
+          "disconnect" -> {
+              result.success(client.disconnect())
+          }
+          "getCurrentSession" -> {
+              val session = client.session?.let { gson.toJson(client.session) }
+              result.success(session)
           }
           "approveSession" -> {
             val accounts = call.argument<List<String>>("accounts")
@@ -86,6 +98,7 @@ class WalletConnectPlugin : FlutterPlugin, MethodCallHandler {
               return
             }
             client.approveSession(accounts, chainId)
+              client.isConnected
           }
           else -> {
             result.notImplemented()
