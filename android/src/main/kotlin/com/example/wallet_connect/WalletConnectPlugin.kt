@@ -22,6 +22,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
+import kotlin.experimental.and
 
 
 /** WalletConnectPlugin */
@@ -87,18 +88,43 @@ class WalletConnectPlugin : FlutterPlugin, MethodCallHandler {
               result.success(session)
           }
           "approveSession" -> {
-            val accounts = call.argument<List<String>>("accounts")
-            val chainId = call.argument<Int>("chain_id")
-            if (accounts == null) {
-              result.error("missing_accounts", "No accounts provided", "null")
-              return
-            }
-            if (chainId == null) {
-              result.error("missing_chain_id", "No chain_id provided", "null")
-              return
-            }
-            client.approveSession(accounts, chainId)
-              client.isConnected
+              val accounts = call.argument<List<String>>("accounts")
+              val chainId = call.argument<Int>("chain_id")
+              if (accounts == null) {
+                  result.error("missing_accounts", "No accounts provided", "null")
+                  return
+              }
+              if (chainId == null) {
+                  result.error("missing_chain_id", "No chain_id provided", "null")
+                  return
+              }
+              client.approveSession(accounts, chainId)
+          }
+          "rejectRequest" -> {
+              val id = call.argument<Long>("id")
+              val message = call.argument<String>("message")
+              if (id == null) {
+                  result.error("missing_id", "No id provided", "null")
+                  return
+              }
+              if (message == null) {
+                  result.error("missing_message", "No message provided", "null")
+                  return
+              }
+              client.rejectRequest(id, message)
+          }
+          "approveRequest" -> {
+              val id = call.argument<Long>("id")
+              val requestResult = call.argument<Any>("result")
+              if (id == null) {
+                  result.error("missing_id", "No id provided", "null")
+                  return
+              }
+              /*if (requestResult == null) {
+                  result.error("missing_result", "No result provided", "null")
+                  return
+              }*/
+              client.approveRequest(id, requestResult)
           }
           else -> {
             result.notImplemented()

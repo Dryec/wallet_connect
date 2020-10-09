@@ -94,6 +94,17 @@ class WalletConnect {
     return await _channel.invokeMethod('disconnect') ?? false;
   }
 
+  static Future rejectRequest(
+      {@required int id, @required String message}) async {
+    await _channel
+        .invokeMethod('rejectRequest', {'id': id, 'message': message});
+  }
+
+  static Future approveRequest(
+      {@required int id, @required dynamic result}) async {
+    await _channel.invokeMethod('approveRequest', {'id': id, 'result': result});
+  }
+
   static Future approveSession(
       {@required List<String> accounts, @required int chainId}) async {
     await _channel.invokeMethod(
