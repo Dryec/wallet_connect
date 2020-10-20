@@ -1,0 +1,67 @@
+PODS:
+  - AnyCodable-FlightSchool (0.2.3)
+  - barcode_scan (0.0.1):
+    - Flutter
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+  - CryptoSwift (1.1.3)
+  - Flutter (1.0.0)
+  - MTBBarcodeScanner (5.0.11)
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.11.0):
+    - PromiseKit/CorePromise
+  - Starscream (3.1.1)
+  - SwiftProtobuf (1.12.0)
+  - wallet_connect (0.0.1):
+    - Flutter
+    - WC-Swift (~> 0.1)
+  - WC-Swift (0.1.2):
+    - AnyCodable-FlightSchool (= 0.2.3)
+    - CryptoSwift (= 1.1.3)
+    - PromiseKit (= 6.11.0)
+    - Starscream (= 3.1.1)
+
+DEPENDENCIES:
+  - barcode_scan (from `.symlinks/plugins/barcode_scan/ios`)
+  - Flutter (from `Flutter`)
+  - wallet_connect (from `.symlinks/plugins/wallet_connect/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AnyCodable-FlightSchool
+    - CryptoSwift
+    - MTBBarcodeScanner
+    - PromiseKit
+    - Starscream
+    - SwiftProtobuf
+    - WC-Swift
+
+EXTERNAL SOURCES:
+  barcode_scan:
+    :path: ".symlinks/plugins/barcode_scan/ios"
+  Flutter:
+    :path: Flutter
+  wallet_connect:
+    :path: ".symlinks/plugins/wallet_connect/ios"
+
+SPEC CHECKSUMS:
+  AnyCodable-FlightSchool: cf53737f4bd1d9187cea453679734506e478fff3
+  barcode_scan: a5c27959edfafaa0c771905bad0b29d6d39e4479
+  CryptoSwift: 6b6e488df0598b3e9fa49254ed1a65e8c1b1e10b
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftProtobuf: 4ef85479c18ca85b5482b343df9c319c62bda699
+  wallet_connect: 038fce88463efeb4ba26e1c6f07b83b0d40f3911
+  WC-Swift: 334f2a3ad26570917fd7d8c39b554e5c1cf446b2
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.3
