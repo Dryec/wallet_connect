@@ -24,7 +24,7 @@ class EthereumSignMessage {
       );
 
   factory EthereumSignMessage.fromJson(String str) =>
-      EthereumSignMessage.fromMap(json.decode(str));
+      EthereumSignMessage.fromMap(Map.from(json.decode(str)));
 
   String toJson() => json.encode(toMap());
 
