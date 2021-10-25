@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
           child: RaisedButton(
             child: Text('Connect'),
             onPressed: () {
-              WalletConnect.connect();
+              //WalletConnect.connect();
             },
           ),
         ),
